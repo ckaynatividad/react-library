@@ -1,15 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import React from 'react';
 import App from './App';
 
-it('renders a welcome message when signed out', async () => {
-  const { container } = render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>
-  );
 
-  await screen.findByRole('list', { name: 'book list' });
-
-  expect(container).toMatchSnapshot();
+test('renders', () => {
+  render(<App />);
+  const booklist = screen.getByText('Library Catalog');
+  
+  
+  expect(booklist).toBeInTheDocument();
 });
