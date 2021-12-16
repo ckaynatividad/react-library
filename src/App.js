@@ -7,10 +7,13 @@ function App() {
   return (
     <main className="container">
       <h1>Library Catalog</h1>
+      <h2> Welcome to Dangalf&apos;s Library of Computer Science!</h2>
       <BrowserRouter>
-        <NavLink to="/books" data-testid="book-link">
-      Books
-        </NavLink>
+        <p> Checkout the amazing selection of books in our&nbsp;
+          <NavLink to="/books" data-testid="book-link">
+            catalog
+          </NavLink>
+      .</p>
         <Switch>
           <Route path="/books" exact>
             <h1>Booklist</h1>
